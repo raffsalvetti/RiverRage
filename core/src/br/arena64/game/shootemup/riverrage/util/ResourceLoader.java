@@ -1,11 +1,16 @@
 package br.arena64.game.shootemup.riverrage.util;
 
+import java.io.File;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 
 public final class ResourceLoader {
+	public static File map1;
+	public static File map2;
+	
 	public static Texture player1;
 	public static Texture player1_projectile;
 	public static Texture player2;
@@ -17,6 +22,8 @@ public final class ResourceLoader {
 	public static Texture water;
 	public static Texture grass;
 	public static Texture house;
+	
+	public static Texture gasStation;
 	public static Texture enemyBoat;
 	public static Texture enemyCopter;
 	public static Texture enemyJet;
@@ -30,6 +37,9 @@ public final class ResourceLoader {
 	public static Music musicStage1;
 	
 	static {
+		map1 = Gdx.files.internal("map/stage1.png").file();
+		map2 = Gdx.files.internal("map/stage2.png").file();
+		
 		fuelMeter = new Texture(Gdx.files.internal("interface/fuel_meter.png"));
 		fuelMeterIndicator = new Texture(Gdx.files.internal("interface/fuel_meter_indicator.png"));
 		
@@ -37,6 +47,8 @@ public final class ResourceLoader {
 		player2 = new Texture(Gdx.files.internal("units/player2.png"));
 		player1_projectile = new Texture(Gdx.files.internal("units/player1_projectile.png"));
 		player2_projectile = new Texture(Gdx.files.internal("units/player2_projectile.png"));
+		
+		gasStation = new Texture(Gdx.files.internal("units/gas_station.png"));
 
 		grass = new Texture(Gdx.files.internal("scenario/grass.png"));
 		house = new Texture(Gdx.files.internal("scenario/house.png"));

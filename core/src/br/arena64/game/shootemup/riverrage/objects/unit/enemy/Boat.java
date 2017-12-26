@@ -1,22 +1,21 @@
-package br.arena64.game.shootemup.riverrage.objects.player.enemy;
+package br.arena64.game.shootemup.riverrage.objects.unit.enemy;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import br.arena64.game.shootemup.riverrage.Constants;
 import br.arena64.game.shootemup.riverrage.objects.base.Drawable;
-import br.arena64.game.shootemup.riverrage.objects.player.enemy.base.Enemy;
+import br.arena64.game.shootemup.riverrage.objects.unit.enemy.base.Enemy;
+import br.arena64.game.shootemup.riverrage.util.Constants;
 import br.arena64.game.shootemup.riverrage.util.ResourceLoader;
 
-public class Copter extends Enemy implements Drawable {
+public class Boat extends Enemy implements Drawable {
 	private boolean toRight = true;
 	
-	public Copter(int xPosition, int yPosition) {
-		super(ResourceLoader.enemyCopter, xPosition, yPosition);
+	public Boat(int xPosition, int yPosition) {
+		super(ResourceLoader.enemyBoat, xPosition, yPosition);
 		getCollisionBox().setCenter(xPosition, yPosition);
 		setVisible(true);
-		setSpeedModificator(2F);
-		setScore(40L);
+		setScore(20L);
 	}
 
 	@Override
@@ -45,7 +44,7 @@ public class Copter extends Enemy implements Drawable {
 					0,
 					getTexture().getWidth(),
 					getTexture().getHeight(),
-					!toRight,
+					toRight,
 					false
 					);
 		}

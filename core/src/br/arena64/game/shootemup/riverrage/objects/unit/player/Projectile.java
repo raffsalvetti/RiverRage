@@ -1,4 +1,4 @@
-package br.arena64.game.shootemup.riverrage.objects.player;
+package br.arena64.game.shootemup.riverrage.objects.unit.player;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import br.arena64.game.shootemup.riverrage.objects.base.Drawable;
 import br.arena64.game.shootemup.riverrage.objects.base.GameObject;
-import br.arena64.game.shootemup.riverrage.objects.player.base.HitListener;
-import br.arena64.game.shootemup.riverrage.objects.player.enemy.base.Enemy;
+import br.arena64.game.shootemup.riverrage.objects.unit.enemy.base.Enemy;
+import br.arena64.game.shootemup.riverrage.objects.unit.player.base.HitListener;
 
 public class Projectile extends GameObject implements Drawable {
 

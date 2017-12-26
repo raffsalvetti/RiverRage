@@ -1,4 +1,4 @@
-package br.arena64.game.shootemup.riverrage;
+package br.arena64.game.shootemup.riverrage.objects.dashboard;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Camera;
@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
 import br.arena64.game.shootemup.riverrage.objects.base.Drawable;
-import br.arena64.game.shootemup.riverrage.objects.player.Plane;
+import br.arena64.game.shootemup.riverrage.objects.unit.player.Plane;
 import br.arena64.game.shootemup.riverrage.util.ResourceLoader;
 
 public class Dashboard implements Drawable {
@@ -44,7 +44,7 @@ public class Dashboard implements Drawable {
 			batch.draw(fuelMeterIndicator, player.getFuelLevel() + 22, 12);
 			batch.draw(fuelMeter, 20, 10);
 		} else if(player.getPlayerNumber() == 2) {
-			batch.draw(fuelMeterIndicator, Gdx.graphics.getWidth() - 20 - 6 - 4, 12);
+			batch.draw(fuelMeterIndicator, Gdx.graphics.getWidth() + player.getFuelLevel() - 66 - 20 - 6 - 4, 12);
 			batch.draw(fuelMeter, Gdx.graphics.getWidth() - fuelMeter.getWidth() - 20, 10);
 		}
 		batch.end();

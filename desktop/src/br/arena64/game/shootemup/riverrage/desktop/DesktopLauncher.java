@@ -10,6 +10,7 @@ public class DesktopLauncher {
 		config.title = "River Rage";
 		config.width = 320;
 		config.height = 240;
+		config.resizable = false;
 		new LwjglApplication(new RiverRage_Main(), config);
 	}
 }

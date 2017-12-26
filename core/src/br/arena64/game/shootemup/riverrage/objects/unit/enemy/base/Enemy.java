@@ -1,4 +1,4 @@
-package br.arena64.game.shootemup.riverrage.objects.player.enemy.base;
+package br.arena64.game.shootemup.riverrage.objects.unit.enemy.base;
 
 import com.badlogic.gdx.graphics.Texture;
 

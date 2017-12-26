@@ -1,31 +1,35 @@
-package br.arena64.game.shootemup.riverrage.objects.player.enemy;
+package br.arena64.game.shootemup.riverrage.objects.unit.enemy;
+
+import java.util.Random;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import br.arena64.game.shootemup.riverrage.Constants;
 import br.arena64.game.shootemup.riverrage.objects.base.Drawable;
-import br.arena64.game.shootemup.riverrage.objects.player.enemy.base.Enemy;
+import br.arena64.game.shootemup.riverrage.objects.unit.enemy.base.Enemy;
+import br.arena64.game.shootemup.riverrage.util.Constants;
 import br.arena64.game.shootemup.riverrage.util.ResourceLoader;
 
-public class Boat extends Enemy implements Drawable {
+public class Jet extends Enemy implements Drawable {
 	private boolean toRight = true;
 	
-	public Boat(int xPosition, int yPosition) {
-		super(ResourceLoader.enemyBoat, xPosition, yPosition);
+	public Jet(int xPosition, int yPosition) {
+		super(ResourceLoader.enemyJet, xPosition, yPosition);
 		getCollisionBox().setCenter(xPosition, yPosition);
 		setVisible(true);
-		setScore(20L);
+		setSpeedModificator(3F);
+		setScore(40L);
+		toRight = new Random(System.currentTimeMillis()).nextBoolean();
 	}
 
 	@Override
 	public void draw(SpriteBatch batch) {
 		if(isVisible()) {
 			/* MOVIMENTO X */
-			if(getCollisionBox().x + getCollisionBox().width >= Gdx.graphics.getWidth())
-				toRight = false;
-			if(getCollisionBox().x < 0)
-				toRight = true;
+			if(getCollisionBox().x >= Gdx.graphics.getWidth() + getCollisionBox().width)
+				getCollisionBox().x = -1 * getCollisionBox().width;
+			if(getCollisionBox().x < -1 * getCollisionBox().width)
+				getCollisionBox().x = Gdx.graphics.getWidth() + getCollisionBox().width;
 			getCollisionBox().x += (toRight ? 1 : -1) * getSpeed() * Gdx.graphics.getDeltaTime();
 			
 			/* MOVIMENTO Y */

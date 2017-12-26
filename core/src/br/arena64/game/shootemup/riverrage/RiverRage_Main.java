@@ -13,11 +13,13 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import br.arena64.game.shootemup.riverrage.objects.base.Drawable;
 import br.arena64.game.shootemup.riverrage.objects.base.GameObject;
-import br.arena64.game.shootemup.riverrage.objects.player.Plane;
-import br.arena64.game.shootemup.riverrage.objects.player.enemy.Boat;
-import br.arena64.game.shootemup.riverrage.objects.player.enemy.Copter;
-import br.arena64.game.shootemup.riverrage.objects.player.enemy.Jet;
-import br.arena64.game.shootemup.riverrage.objects.player.enemy.base.Enemy;
+import br.arena64.game.shootemup.riverrage.objects.dashboard.Dashboard;
+import br.arena64.game.shootemup.riverrage.objects.unit.enemy.Boat;
+import br.arena64.game.shootemup.riverrage.objects.unit.enemy.Copter;
+import br.arena64.game.shootemup.riverrage.objects.unit.enemy.GasStation;
+import br.arena64.game.shootemup.riverrage.objects.unit.enemy.Jet;
+import br.arena64.game.shootemup.riverrage.objects.unit.enemy.base.Enemy;
+import br.arena64.game.shootemup.riverrage.objects.unit.player.Plane;
 import br.arena64.game.shootemup.riverrage.util.MapLoader;
 
 public class RiverRage_Main extends ApplicationAdapter {
@@ -43,6 +45,7 @@ public class RiverRage_Main extends ApplicationAdapter {
 		enemys.add(new Copter(r.nextInt(Gdx.graphics.getWidth() + 1), r.nextInt(Gdx.graphics.getHeight() + 1)));
 		enemys.add(new Jet(r.nextInt(Gdx.graphics.getWidth() + 1), r.nextInt(Gdx.graphics.getHeight() + 1)));
 		enemys.add(new Jet(r.nextInt(Gdx.graphics.getWidth() + 1), r.nextInt(Gdx.graphics.getHeight() + 1)));
+		enemys.add(new GasStation(Gdx.graphics.getWidth() / 2, Gdx.graphics.getHeight() / 2));
 		
 		gameObjects.addAll(enemys);
 		
